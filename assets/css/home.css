@@ -11,7 +11,15 @@
   position:absolute;inset:0;background-size:cover;background-position:center;
   opacity:0;filter:blur(18px) brightness(.55);transform:scale(1.1);
 }
-#prologue .logo-reveal{position:relative;z-index:5;width:170px;opacity:0;}
+#prologue .logo-wrap{position:relative;z-index:5;display:flex;align-items:center;justify-content:center;opacity:0;}
+#prologue .logo-wrap::before{
+  content:'';position:absolute;inset:-40px;border-radius:50%;
+  background:radial-gradient(circle, rgba(251,246,242,.28) 0%, rgba(251,246,242,0) 70%);
+}
+#prologue .logo-reveal{
+  position:relative;width:210px;
+  filter:drop-shadow(0 4px 22px rgba(0,0,0,.55));
+}
 #skip-intro{
   position:absolute;bottom:28px;right:28px;color:#e9dcd4;font-size:11px;letter-spacing:2px;text-transform:uppercase;
   opacity:.55;z-index:20;cursor:pointer;background:none;border:1px solid rgba(255,255,255,.3);
@@ -59,7 +67,7 @@
 /* ---------- Chapter 3: Bastidores ---------- */
 #cap3{background:var(--champagne);}
 #cap3 .split{display:grid;grid-template-columns:1.1fr .9fr;gap:70px;align-items:center;}
-#cap3 .photo-wrap{position:relative;overflow:hidden;border-radius:4px;}
+#cap3 .photo-wrap{position:relative;overflow:hidden;border-radius:6px;box-shadow:0 20px 50px rgba(74,59,52,.18);}
 #cap3 .photo-wrap img{width:100%;height:100%;object-fit:cover;transform:scale(1.12);transition:transform 1.4s ease;}
 #cap3 .text h2{font-size:clamp(28px,3.6vw,40px);margin:14px 0 22px;}
 #cap3 .text .anchor{font-family:var(--serif);font-style:italic;font-size:21px;color:var(--bronze);margin:22px 0;line-height:1.5;}
