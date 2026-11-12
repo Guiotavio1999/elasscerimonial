@@ -30,18 +30,18 @@ O JWT é validado com emissor e audiência do host Neon e as chaves públicas da
 4. Aplicar checklists com prazos relativos à data do evento.
 5. Autorizar o e-mail do casal no evento. O formulário tem cinco grupos, rascunho, conclusão e controle de versão. Salvar é explícito; não há autosave silencioso.
 6. Cadastrar convite individual ou de grupo. Gerar link privado de RSVP. Regenerar invalida o link anterior; só o hash do token é persistido. Um grupo guarda os nomes dos membros em campo textual e confirma uma quantidade total autorizada.
-7. Mesas são alocadas por grupo e a capacidade é validada no banco. O check-in aceita apenas grupos confirmados, preserva operador e horário e impede repetição. O check-in atual registra a chegada total do grupo uma única vez, sem chegadas fracionadas.
+7. Mesas são alocadas por grupo e a capacidade é validada no banco. O check-in aceita apenas grupos confirmados, preserva operador e horário e impede repetição. O check-in aceita chegadas parciais, acumula as quantidades e usa uma chave de solicitação para impedir duplicação do mesmo envio.
 8. CMS: textos configurados da home, serviços, FAQ, histórias autorizadas, depoimentos e parceiros. Publicar determina o que fica disponível na API pública. Textos e links são renderizados sem HTML arbitrário.
 
 ## Financeiro
 
 Contratos ativos geram receita contratada; pagamentos registram caixa efetivo. Rascunhos/cancelados/arquivados não compõem contratado. Adiantamentos são identificados como tal. Estornos mantêm o histórico. A operação atômica `add_payment` trava o contrato, valida saldo e usa chave de idempotência para evitar duplicidade. Não há botão para apagar pagamentos.
 
-Exemplo validado: contrato de R$ 2.000, adiantamento R$ 350, saldo R$ 1.650, evento em Planejamento. Situação financeira e situação operacional são independentes. As despesas distinguem previstas, pagas e canceladas. Parcelas registram vencimentos, enquanto recebimentos são lançados por contrato; esta versão não concilia um pagamento automaticamente com uma parcela específica.
+Exemplo validado: contrato de R$ 2.000, adiantamento R$ 350, saldo R$ 1.650, evento em Planejamento. Situação financeira e situação operacional são independentes. As despesas distinguem previstas, pagas e canceladas. Parcelas registram vencimentos; a visão de cobrança aloca recebimentos líquidos às parcelas com vencimento mais antigo e identifica o saldo vencido. O lançamento original continua vinculado ao contrato, com trilha preservada.
 
 ## Arquivos
 
-PDF, PNG e JPEG de até 2 MB, com validação de assinatura binária. Armazenamento privado em bytea, adequado para esta primeira versão de volume reduzido. Download exige autenticação e autorização por evento. Reenviar com o mesmo título preserva versões. Arquivos são baixados como anexos, sem execução no domínio. Não há assinatura eletrônica integrada. O CMS recebe URLs HTTPS de imagens; upload de galeria pública ainda depende de armazenamento de mídia específico.
+PDF, PNG e JPEG de até 2 MB, com validação de assinatura binária. Armazenamento privado em bytea, adequado para esta primeira versão de volume reduzido. Download exige autenticação e autorização por evento. Reenviar com o mesmo título preserva versões. Arquivos são baixados como anexos, sem execução no domínio. Não há assinatura eletrônica integrada. O CMS recebe URLs HTTPS de imagens e conta com uma biblioteca pública própria de JPEG, PNG e WebP de até 2 MB, separada dos documentos privados.
 
 ## Banco e recuperação
 
@@ -59,10 +59,10 @@ Para executar a integração, usar banco e autenticação exclusivos de teste em
 
 - Google OAuth e autenticação gerenciada configurados. O SMTP compartilhado é o inicial do provedor; SMTP próprio da marca requer credenciais e validação de entrega. A aplicação não afirma que o e-mail chegou ao destinatário.
 - Sem disparos automáticos de WhatsApp, assinatura eletrônica, cobrança online ou sincronização de calendário externo.
-- Sem importação em lote, editor de layout de mesas, QR Code ou chegadas parciais por grupo.
+- Sem editor visual de layout de mesas ou QR Code. Importação em lote e chegadas parciais estão disponíveis.
 - Histórico comercial e propostas são registros operacionais; não há gerador de documento comercial diagramado nesta versão.
-- As buscas são por módulo; a busca do cabeçalho direciona ao CRM. Não é busca cruzada por toda a plataforma.
-- As exportações operacionais refletem a página filtrada visível. O financeiro exporta até 500 movimentações recentes.
+- A busca do cabeçalho pesquisa contatos, clientes, eventos, tarefas, fornecedores, contratos, propostas e convidados; o resultado abre o módulo filtrado.
+- As exportações operacionais incluem todas as páginas filtradas. O financeiro percorre todas as páginas de movimentações do evento ou da operação.
 - Há política informativa de privacidade; não há rotina automatizada de retenção/exclusão nem garantia de conformidade jurídica integral. Solicitações dos titulares são tratadas pela administração.
 - Telas, regras e persistência formam um núcleo operacional; a lista ampliada do prompt continua sendo evolução de produto, não uma alegação de equivalência integral ao software de referência.
 
@@ -74,6 +74,10 @@ Melhorias adicionais: pesquisa por toda a operação; agenda de eventos e tarefa
 
 A migração 004 adiciona apenas a biblioteca de imagens; não altera registros existentes. Imagens publicadas ficam acessíveis por URL pública e podem levar até cinco minutos para sair de caches após despublicação. Documentos privados continuam em outro módulo e exigem autorização. Vídeos grandes não são aceitos nessa biblioteca.
 
-Busca global, exportação completa, importação de convidados, cadastro da equipe e upload de imagens passam a substituir as limitações correspondentes acima. Continuam pendentes: reconciliação de recebimentos com parcelas específicas; check-in fracionado e QR; sincronização externa de calendário; assinatura eletrônica; cobrança online e disparos automáticos de mensagens; editor visual de mesas; integração de vídeos grandes; rotina automatizada de retenção e cópias externas. Essas integrações não são simuladas.
+Busca global, exportação completa, importação de convidados, cadastro da equipe e upload de imagens passam a substituir as limitações correspondentes acima. Continuam pendentes: vínculo contábil explícito de cada recebimento a uma parcela (a cobrança atual usa alocação por vencimento); QR; sincronização externa de calendário; assinatura eletrônica; cobrança online e disparos automáticos de mensagens; editor visual de mesas; integração de vídeos grandes; rotina automatizada de retenção e cópias externas. Essas integrações não são simuladas.
 
 Para operar com dados reais: o titular entra com o e-mail já autorizado, cria clientes/eventos, cadastra contratos/parcelas, atribui equipe e autoriza cada casal no evento correto. Nenhuma senha padrão é publicada e nenhum cliente fictício é cadastrado em produção.
+
+A migração 005 registra cada chegada parcial com operador, quantidade, horário e chave idempotente. Os totais existentes de check-in são preservados.
+
+Validação desta entrega: testes de domínio e importação; testes de integração isolados de imagens, equipe, pesquisa e revogação; regressão de financeiro, documentos, isolamento e check-in parcial. Executar com `NODE_USE_ENV_PROXY=1 PORT=3003 TEST_URL=http://localhost:3003 node scripts/run-integration.mjs tests/release.test.mjs tests/extensions.test.mjs` quando o ambiente requer proxy; as fixtures ficam somente na branch de QA.

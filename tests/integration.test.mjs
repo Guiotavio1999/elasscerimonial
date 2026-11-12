@@ -2,7 +2,7 @@ import test from 'node:test';import assert from 'node:assert/strict';import {rea
 const enabled=process.env.INTEGRATION==='1',base=process.env.TEST_URL||'http://localhost:3000';
 test('fluxo real isolado: contato → cliente → evento → financeiro → portal → RSVP → check-in → CMS', {skip:!enabled,timeout:900000},async()=>{
  const sql=database();const qa=JSON.parse(await readFile('.qa.json','utf8'));let token=qa.token;
- const call=async(action,body,params={},auth=token,method=body?'POST':'GET')=>{const r=await fetch(base+'/api/app?'+new URLSearchParams({action,...params}),{method,headers:{'Content-Type':'application/json',...(auth?{Authorization:'Bearer '+auth}:{})},body:body?JSON.stringify(body):undefined});const value=await r.json();console.log(action,method,r.status);return {status:r.status,value};};
+ const call=async(action,body,params={},auth=token,method=body?'POST':'GET')=>{if(auth===token&&JSON.parse(Buffer.from(token.split('.')[1],'base64url')).exp*1000<Date.now()+60000){const refreshed=await fetch(process.env.NEON_AUTH_BASE_URL+'/token',{headers:{Cookie:qa.cookie,Origin:'http://localhost:3000'}});token=(await refreshed.json()).token;auth=token;}const r=await fetch(base+'/api/app?'+new URLSearchParams({action,...params}),{method,headers:{'Content-Type':'application/json',...(auth?{Authorization:'Bearer '+auth}:{})},body:body?JSON.stringify(body):undefined});const value=await r.json();console.log(action,method,r.status);return {status:r.status,value};};
  const ok=r=>{assert.ok(r.status<300,JSON.stringify(r));return r.value;};
  assert.equal((await call('me',undefined,{},null)).status,401);assert.equal((await call('me',undefined,{},'garbage')).status,401);
  ok(await call('me'));const baseline=ok(await call('dashboard')).financial;
