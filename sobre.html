@@ -26,6 +26,7 @@
 <meta name="twitter:image" content="https://elas-cerimonial-site.vercel.app/assets/img/og-image.jpg">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,500&family=Jost:wght@300;400;500;600&family=Alex+Brush&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -33,8 +34,8 @@
 
 <header id="site-header" class="light-context">
   <a href="index.html" class="brand">
-    <img class="icon icon-light" src="assets/img/icon-white.png" alt="">
-    <img class="icon icon-dark" src="assets/img/icon-bronze.png" alt="">
+    <img class="icon icon-light" src="assets/img/icon-white.png" alt="" width="300" height="300" decoding="async">
+    <img class="icon icon-dark" src="assets/img/icon-bronze.png" alt="" width="300" height="300" decoding="async">
     <span class="brand-text">
       <span class="brand-word">Elass</span>
       <span class="brand-sub">Cerimonial</span>
@@ -64,7 +65,7 @@
 </div>
 
 <section class="page-hero">
-  <div class="bg" style="background-image:url('assets/img/team.jpg');background-position:top center;"></div>
+  <div class="bg" style="background-image:url('assets/img/team.jpg');background-image:image-set(url('assets/img/team.webp') type('image/webp'), url('assets/img/team.jpg') type('image/jpeg'));background-position:top center;"></div>
   <div class="inner">
     <div class="breadcrumb">Elass Cerimonial · Sobre</div>
     <h1>Duas mulheres, uma missão: transformar sonhos em realidade.</h1>
@@ -80,7 +81,7 @@
     <p style="font-size:16px;margin-bottom:18px;">O primeiro casamento que assinamos juntas mudou tudo. Vimos de perto o que significa aliviar o peso dos noivos, resolver um imprevisto sem que ninguém perceba e entregar um dia exatamente como ele foi sonhado. Ali entendemos que essa seria a nossa missão.</p>
     <p style="font-size:16px;margin-bottom:18px;">Hoje, a Elass é sinônimo de organização com alma. Cada projeto carrega um pouco da gente, porque acreditamos que casamento não é sobre logística. É sobre emoção bem cuidada.</p>
     <div class="divider"></div>
-    <p style="font-family:var(--serif);font-style:italic;font-size:21px;color:var(--bronze);">"Cuidamos de cada detalhe com a mesma dedicação que dedicaríamos ao nosso próprio casamento."</p>
+    <p style="font-family:var(--serif);font-style:italic;font-size:21px;color:var(--bronze-text);">"Cuidamos de cada detalhe com a mesma dedicação que dedicaríamos ao nosso próprio casamento."</p>
   </div>
 </section>
 
@@ -120,7 +121,7 @@
 <footer>
   <div class="footer-grid">
     <div class="foot-brand">
-      <img src="assets/img/logo-bronze.png" alt="Elass Cerimonial" style="filter:brightness(0) invert(1) opacity(.9);">
+      <img loading="lazy" src="assets/img/logo-bronze.png" alt="Elass Cerimonial" style="filter:brightness(0) invert(1) opacity(.9);" width="500" height="500" decoding="async">
       <p>Assessoria e Cerimonial para casamentos e eventos memoráveis. Planejamos. Cuidamos. Realizamos.</p>
     </div>
     <div><h5>Navegue</h5><ul><li><a href="sobre.html">Sobre</a></li><li><a href="servicos.html">Serviços</a></li><li><a href="historias.html">Histórias</a></li><li><a href="parceiros.html">Parceiros</a></li></ul></div>

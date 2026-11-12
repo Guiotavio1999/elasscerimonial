@@ -26,6 +26,7 @@
 <meta name="twitter:image" content="https://elas-cerimonial-site.vercel.app/assets/img/og-image.jpg">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,500&family=Jost:wght@300;400;500;600&family=Alex+Brush&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
 <link rel="stylesheet" href="assets/css/home.css">
@@ -36,11 +37,11 @@
 
 <!-- ================= PROLOGUE ================= -->
 <div id="prologue">
-  <div class="reveal-bg" style="background-image:url('assets/img/prologue.jpg');"></div>
+  <div class="reveal-bg" style="background-image:url('assets/img/prologue.jpg');background-image:image-set(url('assets/img/prologue.webp') type('image/webp'), url('assets/img/prologue.jpg') type('image/jpeg'));"></div>
   <div class="line" id="line1">Existem dias que mudam uma vida inteira.</div>
   <div class="line" id="line2">Este será lembrado para sempre.</div>
   <div class="logo-wrap" id="logo-reveal">
-    <img class="logo-reveal" src="assets/img/logo-white.png" alt="Elass Cerimonial">
+    <img class="logo-reveal" src="assets/img/logo-white.png" alt="Elass Cerimonial" width="500" height="500" decoding="async">
   </div>
   <button id="skip-intro">Pular introdução</button>
 </div>
@@ -48,8 +49,8 @@
 <!-- ================= HEADER ================= -->
 <header id="site-header" style="opacity:0;transform:translateY(-16px);">
   <a href="index.html" class="brand">
-    <img class="icon icon-light" src="assets/img/icon-white.png" alt="">
-    <img class="icon icon-dark" src="assets/img/icon-bronze.png" alt="">
+    <img class="icon icon-light" src="assets/img/icon-white.png" alt="" width="300" height="300" decoding="async">
+    <img class="icon icon-dark" src="assets/img/icon-bronze.png" alt="" width="300" height="300" decoding="async">
     <span class="brand-text">
       <span class="brand-word">Elass</span>
       <span class="brand-sub">Cerimonial</span>
@@ -91,7 +92,7 @@
 
 <!-- ================= CAP 1 — O SONHO ================= -->
 <section class="chapter" id="cap1">
-  <div class="hero-bg" style="background-image:url('assets/img/prologue.jpg');background-position:center 22%;"></div>
+  <div class="hero-bg" style="background-image:url('assets/img/prologue.jpg');background-image:image-set(url('assets/img/prologue.webp') type('image/webp'), url('assets/img/prologue.jpg') type('image/jpeg'));background-position:center 22%;"></div>
   <div class="hero-content">
     <h1 id="hero-title">Porque o seu grande dia merece ser vivido com leveza, beleza e perfeição.</h1>
     <div class="cta-row">
@@ -125,7 +126,7 @@
   <div class="chapter-inner">
     <div class="split">
       <div class="photo-wrap reveal">
-        <img src="assets/img/team.jpg" alt="Equipe Elass Cerimonial">
+        <picture><source srcset="assets/img/team.webp" type="image/webp"><img src="assets/img/team.jpg" alt="Equipe Elass Cerimonial" width="1000" height="1000" decoding="async" loading="lazy"></picture>
       </div>
       <div class="text reveal">
         <span class="eyebrow">Capítulo Três · Os Bastidores</span>
@@ -236,7 +237,7 @@
 <footer>
   <div class="footer-grid">
     <div class="foot-brand">
-      <img src="assets/img/logo-bronze.png" alt="Elass Cerimonial" style="filter:brightness(0) invert(1) opacity(.9);">
+      <img loading="lazy" src="assets/img/logo-bronze.png" alt="Elass Cerimonial" style="filter:brightness(0) invert(1) opacity(.9);" width="500" height="500" decoding="async">
       <p>Assessoria e Cerimonial para casamentos e eventos memoráveis. Planejamos. Cuidamos. Realizamos.</p>
     </div>
     <div>
