@@ -1,0 +1,13 @@
+import {database} from '../lib/db.mjs';
+import {randomBytes} from 'node:crypto';
+import {writeFile} from 'node:fs/promises';
+if(process.env.APP_ENV!=='test')throw Error('This fixture requires APP_ENV=test and an isolated branch.');
+const sql=database(),base=process.env.NEON_AUTH_BASE_URL;
+const password=randomBytes(24).toString('base64url'),email='qa-'+Date.now()+'@example.invalid';
+const response=await fetch(base+'/sign-up/email',{method:'POST',headers:{'Content-Type':'application/json',Origin:'http://localhost:3000'},body:JSON.stringify({name:'Validação Admin',email,password})});
+const body=await response.json();if(!response.ok)throw Error(JSON.stringify(body));
+const cookie=response.headers.getSetCookie().map(s=>s.split(';')[0]).join('; ');
+await sql`UPDATE neon_auth."user" SET "emailVerified"=true WHERE email=${email}`;
+await sql`INSERT INTO access_grants(email,role) VALUES(${email},'admin')`;
+const tokenResponse=await fetch(base+'/token',{headers:{Cookie:cookie,Origin:'http://localhost:3000'}});const data=await tokenResponse.json();console.log('signup',response.status,'token',tokenResponse.status,'claims',data.token?JSON.parse(Buffer.from(data.token.split('.')[1],'base64url').toString()):Object.keys(data));
+await writeFile('.qa.json',JSON.stringify({email,password,cookie,token:data.token}),{mode:0o600});

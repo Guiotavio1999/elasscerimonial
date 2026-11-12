@@ -1,0 +1,9 @@
+{
+ "buildCommand":"npm run build",
+ "outputDirectory":"dist",
+ "framework":null,
+ "regions":["cle1"],
+ "functions":{"api/app.js":{"maxDuration":30}},
+ "rewrites":[{"source":"/admin/:path*","destination":"/workspace.html"},{"source":"/portal/:path*","destination":"/workspace.html"},{"source":"/rsvp/:path*","destination":"/workspace.html"},{"source":"/checkin","destination":"/workspace.html"},{"source":"/sobre","destination":"/sobre.html"},{"source":"/servicos","destination":"/servicos.html"},{"source":"/historias","destination":"/historias.html"},{"source":"/parceiros","destination":"/parceiros.html"},{"source":"/contato","destination":"/contato.html"},{"source":"/privacidade","destination":"/privacidade.html"}],
+ "headers":[{"source":"/(.*)","headers":[{"key":"X-Content-Type-Options","value":"nosniff"},{"key":"X-Frame-Options","value":"DENY"},{"key":"Referrer-Policy","value":"strict-origin-when-cross-origin"},{"key":"Permissions-Policy","value":"camera=(), microphone=(), geolocation=()"},{"key":"Strict-Transport-Security","value":"max-age=31536000; includeSubDomains"}]},{"source":"/api/(.*)","headers":[{"key":"Cache-Control","value":"no-store"}]}]
+}

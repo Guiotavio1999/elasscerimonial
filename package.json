@@ -1,0 +1,1 @@
+{"name":"elasscerimonial","private":true,"type":"module","scripts":{"build":"node scripts/build.mjs","dev":"node --env-file-if-exists=.env scripts/dev.mjs","test":"node --test tests/*.test.mjs"},"dependencies":{"@neon/auth":"latest","@neondatabase/serverless":"latest","jose":"latest"},"devDependencies":{"esbuild":"latest"}}

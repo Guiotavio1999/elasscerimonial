@@ -10,12 +10,12 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <meta name="theme-color" content="#4A3B34">
-<link rel="canonical" href="https://elas-cerimonial-site.vercel.app/servicos.html">
+<link rel="canonical" href="https://elasscerimonial.vercel.app/servicos.html">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://elas-cerimonial-site.vercel.app/servicos.html">
+<meta property="og:url" content="https://elasscerimonial.vercel.app/servicos.html">
 <meta property="og:title" content="Serviços | Elass Cerimonial">
 <meta property="og:description" content="Cada serviço é um capítulo exclusivo da sua história.">
-<meta property="og:image" content="https://elas-cerimonial-site.vercel.app/assets/img/og-image.jpg">
+<meta property="og:image" content="https://elasscerimonial.vercel.app/assets/img/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="pt_BR">
@@ -23,16 +23,17 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Serviços | Elass Cerimonial">
 <meta name="twitter:description" content="Cada serviço é um capítulo exclusivo da sua história.">
-<meta name="twitter:image" content="https://elas-cerimonial-site.vercel.app/assets/img/og-image.jpg">
+<meta name="twitter:image" content="https://elasscerimonial.vercel.app/assets/img/og-image.jpg">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,500&family=Jost:wght@300;400;500;600&family=Alex+Brush&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+<a href="#main-content" class="skip-link">Pular para o conteúdo</a>
 
 <header id="site-header" class="light-context">
-  <a href="index.html" class="brand">
+  <a href="index.html" class="brand" aria-label="Elass Cerimonial — início">
     <img class="icon icon-light" src="assets/img/icon-white.png" alt="">
     <img class="icon icon-dark" src="assets/img/icon-bronze.png" alt="">
     <span class="brand-text">
@@ -49,22 +50,23 @@
     <a href="contato.html">Contato</a>
     <a href="https://api.whatsapp.com/send?phone=5531996472045" class="nav-cta">Falar com a Elass</a>
   </nav>
-  <button class="menu-toggle" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+  <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-nav"><span></span><span></span><span></span></button>
 </header>
 
-<div id="mobile-nav">
+<div id="mobile-nav" inert>
   <a href="index.html">Home</a>
   <a href="sobre.html">Sobre</a>
   <a href="servicos.html" class="active">Serviços</a>
   <a href="historias.html">Histórias</a>
   <a href="parceiros.html">Parceiros</a>
   <a href="contato.html">Contato</a>
+  <a href="/portal">Portal dos noivos</a>
   <div class="m-divider"></div>
   <a href="https://api.whatsapp.com/send?phone=5531996472045" class="m-cta">Falar com a Elass</a>
 </div>
 
-<section class="page-hero">
-  <div class="bg" style="background-image:url('assets/img/venue.jpg');"></div>
+<section id="main-content" tabindex="-1" class="page-hero">
+  <div class="bg" style="background-image:url('assets/img/venue.webp');"></div>
   <div class="inner">
     <div class="breadcrumb">Elass Cerimonial · Serviços</div>
     <h1>Cada serviço é um capítulo exclusivo da sua história.</h1>
@@ -132,19 +134,20 @@
 </section>
 
 <footer>
+<div class="footer-access"><a href="/portal">Portal dos noivos</a><a href="/admin">Acesso da equipe</a><a href="/privacidade">Privacidade</a></div>
   <div class="footer-grid">
     <div class="foot-brand">
       <img src="assets/img/logo-bronze.png" alt="Elass Cerimonial" style="filter:brightness(0) invert(1) opacity(.9);">
       <p>Assessoria e Cerimonial para casamentos e eventos memoráveis. Planejamos. Cuidamos. Realizamos.</p>
     </div>
     <div><h5>Navegue</h5><ul><li><a href="sobre.html">Sobre</a></li><li><a href="servicos.html">Serviços</a></li><li><a href="historias.html">Histórias</a></li><li><a href="parceiros.html">Parceiros</a></li></ul></div>
-    <div><h5>Contato</h5><ul><li><a href="https://api.whatsapp.com/send?phone=5531996472045">WhatsApp</a></li><li><a href="https://instagram.com/elasscerimonial" target="_blank">@elasscerimonial</a></li><li><a href="contato.html">Fale conosco</a></li></ul></div>
+    <div><h5>Contato</h5><ul><li><a href="https://api.whatsapp.com/send?phone=5531996472045">WhatsApp</a></li><li><a href="https://instagram.com/elasscerimonial" target="_blank" rel="noopener noreferrer">@elasscerimonial</a></li><li><a href="contato.html">Fale conosco</a></li></ul></div>
     <div><h5>Elass Cerimonial</h5><ul><li><a href="index.html">Home</a></li></ul></div>
   </div>
   <div class="foot-bottom"><span>© 2026 Elass Cerimonial. Todos os direitos reservados.</span><span>Contagem · Minas Gerais</span></div>
 </footer>
 
-<a id="wa-float" href="https://api.whatsapp.com/send?phone=5531996472045" target="_blank" aria-label="Falar no WhatsApp">
+<a id="wa-float" href="https://api.whatsapp.com/send?phone=5531996472045" target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp">
   <div class="pulse"></div>
   <svg viewBox="0 0 24 24"><path d="M17.6 6.32A7.85 7.85 0 0 0 12.05 4C7.6 4 4 7.6 4 12.05c0 1.44.38 2.79 1.04 3.96L4 20l4.1-1.04a8 8 0 0 0 3.95 1.03h.01c4.45 0 8.05-3.6 8.05-8.05a7.85 7.85 0 0 0-2.51-5.62zM12.06 18.4h-.01a6.34 6.34 0 0 1-3.23-.89l-.23-.14-2.4.62.64-2.35-.15-.24a6.34 6.34 0 0 1-.98-3.37c0-3.5 2.85-6.36 6.37-6.36a6.32 6.32 0 0 1 6.35 6.37c0 3.5-2.86 6.36-6.36 6.36zm3.49-4.77c-.19-.1-1.13-.56-1.31-.62-.17-.06-.3-.1-.43.1-.13.19-.5.62-.61.75-.11.13-.23.14-.42.05-.19-.1-.8-.3-1.53-.95a5.7 5.7 0 0 1-1.05-1.31c-.11-.19-.01-.29.09-.4.1-.1.19-.23.28-.35.09-.11.12-.19.19-.32.06-.13.03-.24-.02-.34-.06-.1-.5-1.2-.68-1.64-.18-.42-.36-.36-.5-.37h-.42c-.14 0-.37.05-.56.26-.19.21-.75.73-.75 1.77s.77 2.06.88 2.2c.11.15 1.5 2.28 3.63 3.11 2.13.82 2.13.55 2.52.51.38-.03 1.24-.5 1.42-.99.18-.48.18-.9.13-.99-.05-.09-.18-.14-.37-.24z"/></svg>
 </a>
