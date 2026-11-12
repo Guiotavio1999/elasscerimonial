@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /portal
+Disallow: /rsvp
+Disallow: /checkin
+Disallow: /api/
+Sitemap: https://elasscerimonial.vercel.app/sitemap.xml
