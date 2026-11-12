@@ -105,3 +105,25 @@
 #cap6 .btn-primary{background:var(--brown);border-color:var(--brown);color:var(--offwhite);}
 #cap6 .btn-primary:hover{background:transparent;color:var(--brown);}
 #cap6 .whats-note{margin-top:22px;font-size:12px;letter-spacing:1px;opacity:.7;}
+
+/* Mesmo filme e mesmas seções; apenas legibilidade e dimensões estáveis. */
+#cap3 .photo-wrap picture{display:block;}
+#cap3 .photo-wrap img{height:auto;aspect-ratio:1/1;}
+#cap3 .text .anchor{color:var(--bronze-text);}
+#cap6 .whats-note{font-size:13px;letter-spacing:.6px;opacity:.95;}
+#skip-intro{opacity:.95;font-size:12px;}
+@media(max-width:600px){
+ .chapter{padding:96px 7vw 76px;}
+ #cap1{padding:0;}
+ #cap1 .hero-content{padding:0 7vw 112px;max-width:100%;}
+ #cap1 h1{font-size:clamp(32px,8.7vw,44px);line-height:1.2;}
+ .cta-row{gap:20px;}
+ #cap1 .scroll-cue{left:auto;right:7vw;bottom:30px;font-size:10px;letter-spacing:1.2px;}
+ #cap2 .head,#cap5 .head{margin-bottom:38px;}
+ .tl-item{gap:18px;padding:23px 0;}
+ .tl-item p,#cap3 .text p,.service-panel p{font-size:16px;line-height:1.7;}
+ #cap4 .head{padding:90px 7vw 36px;}
+ .service-panel{padding:48px 7vw;}
+ .service-panel .sv-num{top:22px;}
+ .cap4-cta{padding:48px 7vw 64px;}
+}
