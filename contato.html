@@ -10,12 +10,12 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <meta name="theme-color" content="#4A3B34">
-<link rel="canonical" href="https://elasscerimonial.vercel.app/contato.html">
+<link rel="canonical" href="https://elas-cerimonial-site.vercel.app/contato.html">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://elasscerimonial.vercel.app/contato.html">
+<meta property="og:url" content="https://elas-cerimonial-site.vercel.app/contato.html">
 <meta property="og:title" content="Contato | Elass Cerimonial">
 <meta property="og:description" content="Vamos começar a escrever o seu maior sonho?">
-<meta property="og:image" content="https://elasscerimonial.vercel.app/assets/img/og-image.jpg">
+<meta property="og:image" content="https://elas-cerimonial-site.vercel.app/assets/img/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="pt_BR">
@@ -23,17 +23,16 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Contato | Elass Cerimonial">
 <meta name="twitter:description" content="Vamos começar a escrever o seu maior sonho?">
-<meta name="twitter:image" content="https://elasscerimonial.vercel.app/assets/img/og-image.jpg">
+<meta name="twitter:image" content="https://elas-cerimonial-site.vercel.app/assets/img/og-image.jpg">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,500&family=Jost:wght@300;400;500;600&family=Alex+Brush&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-<a href="#main-content" class="skip-link">Pular para o conteúdo</a>
 
 <header id="site-header" class="light-context">
-  <a href="index.html" class="brand" aria-label="Elass Cerimonial — início">
+  <a href="index.html" class="brand">
     <img class="icon icon-light" src="assets/img/icon-white.png" alt="">
     <img class="icon icon-dark" src="assets/img/icon-bronze.png" alt="">
     <span class="brand-text">
@@ -50,23 +49,22 @@
     <a href="contato.html" class="active">Contato</a>
     <a href="https://api.whatsapp.com/send?phone=5531996472045" class="nav-cta">Falar com a Elass</a>
   </nav>
-  <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-nav"><span></span><span></span><span></span></button>
+  <button class="menu-toggle" aria-label="Abrir menu"><span></span><span></span><span></span></button>
 </header>
 
-<div id="mobile-nav" inert>
+<div id="mobile-nav">
   <a href="index.html">Home</a>
   <a href="sobre.html">Sobre</a>
   <a href="servicos.html">Serviços</a>
   <a href="historias.html">Histórias</a>
   <a href="parceiros.html">Parceiros</a>
   <a href="contato.html" class="active">Contato</a>
-  <a href="/portal">Portal dos noivos</a>
   <div class="m-divider"></div>
   <a href="https://api.whatsapp.com/send?phone=5531996472045" class="m-cta">Falar com a Elass</a>
 </div>
 
-<section id="main-content" tabindex="-1" class="page-hero" style="min-height:40vh;">
-  <div class="bg" style="background-image:url('assets/img/prologue.webp');"></div>
+<section class="page-hero" style="min-height:40vh;">
+  <div class="bg" style="background-image:url('assets/img/prologue.jpg');"></div>
   <div class="inner">
     <div class="breadcrumb">Elass Cerimonial · Contato</div>
     <h1>Vamos começar a escrever o seu maior sonho?</h1>
@@ -75,10 +73,10 @@
 </section>
 
 <section class="section">
-  <div class="section-inner contact-layout">
+  <div class="section-inner" style="display:grid;grid-template-columns:1.1fr .9fr;gap:70px;">
     <div>
       <span class="eyebrow">Conte a sua história</span>
-      <h2 style="font-size:clamp(24px,3vw,32px);margin:14px 0 30px;">O primeiro passo é conhecer vocês.</h2>
+      <h2 style="font-size:clamp(24px,3vw,32px);margin:14px 0 30px;">Preencha e a gente te chama no WhatsApp.</h2>
       <form id="contact-form" class="contact-form">
         <div class="form-row">
           <label for="nome">Nome</label>
@@ -90,20 +88,13 @@
         </div>
         <div class="form-row">
           <label for="data">Data prevista do casamento</label>
-          <input type="date" id="data" name="data">
+          <input type="text" id="data" name="data" placeholder="Ainda não sei / dd/mm/aaaa">
         </div>
         <div class="form-row">
           <label for="mensagem">Conte um pouco sobre o sonho de vocês</label>
           <textarea id="mensagem" name="mensagem" placeholder="Estilo do casamento, número de convidados, local..."></textarea>
         </div>
-        <div class="form-row"><label for="email">E-mail (opcional)</label><input type="email" name="email" id="email" autocomplete="email"></div>
-        <div class="form-row"><label for="cidade">Cidade do evento</label><input name="city" id="cidade" maxlength="160" autocomplete="address-level2"></div>
-        <div class="form-row"><label for="convidados">Estimativa de convidados</label><input type="number" min="0" max="10000" name="guests" id="convidados"></div>
-        <div class="form-row"><label for="servico">Serviço desejado</label><select name="service" id="servico"><option value="">Quero orientação</option><option>Assessoria Completa</option><option>Assessoria Parcial</option><option>Cerimonial do Dia</option><option>Outro evento</option></select></div>
-        <div class="hp" aria-hidden="true"><label>Website<input name="website" tabindex="-1" autocomplete="off"></label></div>
-        <label class="consent"><input type="checkbox" name="consent" required> Autorizo a Elass a utilizar meus dados para responder à solicitação e organizar o atendimento. <a href="/privacidade">Privacidade</a></label>
-        <div id="contact-status" role="status" aria-live="polite"></div>
-        <button type="submit" class="btn-primary" style="border:none;cursor:pointer;">Enviar minha solicitação</button>
+        <button type="submit" class="btn-primary" style="border:none;cursor:pointer;">Enviar pelo WhatsApp</button>
       </form>
     </div>
     <div>
@@ -111,7 +102,7 @@
       <h3 style="font-size:20px;margin-bottom:14px;">Fale direto com a gente</h3>
       <p style="font-size:15px;opacity:.85;margin-bottom:22px;">Preferir falar direto? Estamos por aqui:</p>
       <p style="margin-bottom:10px;"><a href="https://api.whatsapp.com/send?phone=5531996472045" class="link-underline">WhatsApp</a></p>
-      <p style="margin-bottom:10px;"><a href="https://instagram.com/elasscerimonial" target="_blank" rel="noopener noreferrer" class="link-underline">@elasscerimonial</a></p>
+      <p style="margin-bottom:10px;"><a href="https://instagram.com/elasscerimonial" target="_blank" class="link-underline">@elasscerimonial</a></p>
       <div class="divider"></div>
       <h3 style="font-size:20px;margin-bottom:14px;">Onde estamos</h3>
       <p style="font-size:15px;opacity:.85;">Contagem, Minas Gerais. Atendemos Belo Horizonte, região metropolitana e casamentos destination em todo o Brasil.</p>
@@ -120,20 +111,19 @@
 </section>
 
 <footer>
-<div class="footer-access"><a href="/portal">Portal dos noivos</a><a href="/admin">Acesso da equipe</a><a href="/privacidade">Privacidade</a></div>
   <div class="footer-grid">
     <div class="foot-brand">
       <img src="assets/img/logo-bronze.png" alt="Elass Cerimonial" style="filter:brightness(0) invert(1) opacity(.9);">
       <p>Assessoria e Cerimonial para casamentos e eventos memoráveis. Planejamos. Cuidamos. Realizamos.</p>
     </div>
     <div><h5>Navegue</h5><ul><li><a href="sobre.html">Sobre</a></li><li><a href="servicos.html">Serviços</a></li><li><a href="historias.html">Histórias</a></li><li><a href="parceiros.html">Parceiros</a></li></ul></div>
-    <div><h5>Contato</h5><ul><li><a href="https://api.whatsapp.com/send?phone=5531996472045">WhatsApp</a></li><li><a href="https://instagram.com/elasscerimonial" target="_blank" rel="noopener noreferrer">@elasscerimonial</a></li><li><a href="contato.html">Fale conosco</a></li></ul></div>
+    <div><h5>Contato</h5><ul><li><a href="https://api.whatsapp.com/send?phone=5531996472045">WhatsApp</a></li><li><a href="https://instagram.com/elasscerimonial" target="_blank">@elasscerimonial</a></li><li><a href="contato.html">Fale conosco</a></li></ul></div>
     <div><h5>Elass Cerimonial</h5><ul><li><a href="index.html">Home</a></li></ul></div>
   </div>
   <div class="foot-bottom"><span>© 2026 Elass Cerimonial. Todos os direitos reservados.</span><span>Contagem · Minas Gerais</span></div>
 </footer>
 
-<a id="wa-float" href="https://api.whatsapp.com/send?phone=5531996472045" target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp">
+<a id="wa-float" href="https://api.whatsapp.com/send?phone=5531996472045" target="_blank" aria-label="Falar no WhatsApp">
   <div class="pulse"></div>
   <svg viewBox="0 0 24 24"><path d="M17.6 6.32A7.85 7.85 0 0 0 12.05 4C7.6 4 4 7.6 4 12.05c0 1.44.38 2.79 1.04 3.96L4 20l4.1-1.04a8 8 0 0 0 3.95 1.03h.01c4.45 0 8.05-3.6 8.05-8.05a7.85 7.85 0 0 0-2.51-5.62zM12.06 18.4h-.01a6.34 6.34 0 0 1-3.23-.89l-.23-.14-2.4.62.64-2.35-.15-.24a6.34 6.34 0 0 1-.98-3.37c0-3.5 2.85-6.36 6.37-6.36a6.32 6.32 0 0 1 6.35 6.37c0 3.5-2.86 6.36-6.36 6.36zm3.49-4.77c-.19-.1-1.13-.56-1.31-.62-.17-.06-.3-.1-.43.1-.13.19-.5.62-.61.75-.11.13-.23.14-.42.05-.19-.1-.8-.3-1.53-.95a5.7 5.7 0 0 1-1.05-1.31c-.11-.19-.01-.29.09-.4.1-.1.19-.23.28-.35.09-.11.12-.19.19-.32.06-.13.03-.24-.02-.34-.06-.1-.5-1.2-.68-1.64-.18-.42-.36-.36-.5-.37h-.42c-.14 0-.37.05-.56.26-.19.21-.75.73-.75 1.77s.77 2.06.88 2.2c.11.15 1.5 2.28 3.63 3.11 2.13.82 2.13.55 2.52.51.38-.03 1.24-.5 1.42-.99.18-.48.18-.9.13-.99-.05-.09-.18-.14-.37-.24z"/></svg>
 </a>

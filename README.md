@@ -28,9 +28,3 @@ Experiência digital cinematográfica para a Elass Cerimonial (Assessoria e Ceri
 ## Stack
 
 HTML + CSS + JavaScript (GSAP / ScrollTrigger para animações na Home), sem dependência de build — pode ser publicado direto como site estático em Vercel, Netlify ou GitHub Pages.
-
-## Plataforma integrada (novembro/2026)
-
-O projeto agora inclui API Node, banco Neon e autenticação gerenciada, painel em `/admin`, portal em `/portal`, RSVP e check-in. O site continua usando a identidade e os arquivos institucionais originais.
-
-Consulte [operação, acesso, recuperação e limitações](docs/plataforma-operacao.md). Instale com `npm ci`, configure as variáveis do `.env.example` em ambiente privado, aplique `node --env-file=.env scripts/migrate.mjs` e rode `npm run build` / `npm run dev`. A publicação exige a função `/api/app`, além dos arquivos estáticos em `dist`.

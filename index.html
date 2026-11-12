@@ -10,12 +10,12 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <meta name="theme-color" content="#4A3B34">
-<link rel="canonical" href="https://elasscerimonial.vercel.app/">
+<link rel="canonical" href="https://elas-cerimonial-site.vercel.app/">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://elasscerimonial.vercel.app/">
+<meta property="og:url" content="https://elas-cerimonial-site.vercel.app/">
 <meta property="og:title" content="Elass Cerimonial | Assessoria & Cerimonial">
 <meta property="og:description" content="Transformamos sonhos em momentos inesquecíveis com organização, carinho e excelência.">
-<meta property="og:image" content="https://elasscerimonial.vercel.app/assets/img/og-image.jpg">
+<meta property="og:image" content="https://elas-cerimonial-site.vercel.app/assets/img/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="pt_BR">
@@ -23,19 +23,31 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Elass Cerimonial | Assessoria & Cerimonial">
 <meta name="twitter:description" content="Transformamos sonhos em momentos inesquecíveis com organização, carinho e excelência.">
-<meta name="twitter:image" content="https://elasscerimonial.vercel.app/assets/img/og-image.jpg">
+<meta name="twitter:image" content="https://elas-cerimonial-site.vercel.app/assets/img/og-image.jpg">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,500&family=Jost:wght@300;400;500;600&family=Alex+Brush&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
 <link rel="stylesheet" href="assets/css/home.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 </head>
 <body>
-<a href="#main-content" class="skip-link">Pular para o conteúdo</a>
 
-<!-- Header -->
-<header id="site-header" class="light-context">
-  <a href="index.html" class="brand" aria-label="Elass Cerimonial — início">
+<!-- ================= PROLOGUE ================= -->
+<div id="prologue">
+  <div class="reveal-bg" style="background-image:url('assets/img/prologue.jpg');"></div>
+  <div class="line" id="line1">Existem dias que mudam uma vida inteira.</div>
+  <div class="line" id="line2">Este será lembrado para sempre.</div>
+  <div class="logo-wrap" id="logo-reveal">
+    <img class="logo-reveal" src="assets/img/logo-white.png" alt="Elass Cerimonial">
+  </div>
+  <button id="skip-intro">Pular introdução</button>
+</div>
+
+<!-- ================= HEADER ================= -->
+<header id="site-header" style="opacity:0;transform:translateY(-16px);">
+  <a href="index.html" class="brand">
     <img class="icon icon-light" src="assets/img/icon-white.png" alt="">
     <img class="icon icon-dark" src="assets/img/icon-bronze.png" alt="">
     <span class="brand-text">
@@ -52,40 +64,176 @@
     <a href="contato.html">Contato</a>
     <a href="https://api.whatsapp.com/send?phone=5531996472045" class="nav-cta">Falar com a Elass</a>
   </nav>
-  <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-nav"><span></span><span></span><span></span></button>
+  <button class="menu-toggle" aria-label="Abrir menu"><span></span><span></span><span></span></button>
 </header>
 
 <!-- ================= MOBILE NAV ================= -->
-<div id="mobile-nav" inert>
+<div id="mobile-nav">
   <a href="index.html" class="active">Home</a>
   <a href="sobre.html">Sobre</a>
   <a href="servicos.html">Serviços</a>
   <a href="historias.html">Histórias</a>
   <a href="parceiros.html">Parceiros</a>
   <a href="contato.html">Contato</a>
-  <a href="/portal">Portal dos noivos</a>
   <div class="m-divider"></div>
   <a href="https://api.whatsapp.com/send?phone=5531996472045" class="m-cta">Falar com a Elass</a>
 </div>
 
-<main id="main-content" tabindex="-1">
-<section class="editorial-hero">
- <div class="hero-copy"><span class="eyebrow">Assessoria & Cerimonial</span><div class="hero-rule"></div><h1 data-cms="hero_title">Vivam o sonho.<br>A gente cuida<br>de cada detalhe.</h1><p data-cms="hero_subtitle">Do primeiro encontro ao último abraço, organização e carinho para vocês viverem o grande dia com leveza.</p><div class="hero-actions"><a href="/contato" class="btn-primary">Vamos planejar o seu dia <span aria-hidden="true">↗</span></a><a href="/servicos" class="text-link">Conheça a nossa assessoria</a></div><div class="hero-signature"><span></span>Planejamos. Cuidamos. Realizamos.</div></div>
- <div class="hero-photo"><img src="assets/img/prologue.webp" width="1440" height="1800" fetchpriority="high" alt="Celebração de casamento presente no acervo da Elass"><div class="photo-caption"><span>O grande dia passa.</span><em>O que se sente, fica.</em></div></div>
+<!-- ================= CHAPTER RAIL ================= -->
+<div id="chapter-rail">
+  <div class="dot-row" data-target="cap1"><span class="label">O Sonho</span><span class="dot"></span></div>
+  <div class="dot-row" data-target="cap2"><span class="label">A Jornada</span><span class="dot"></span></div>
+  <div class="dot-row" data-target="cap3"><span class="label">Os Bastidores</span><span class="dot"></span></div>
+  <div class="dot-row" data-target="cap4"><span class="label">Os Momentos</span><span class="dot"></span></div>
+  <div class="dot-row" data-target="cap5"><span class="label">As Histórias</span><span class="dot"></span></div>
+  <div class="dot-row" data-target="cap6"><span class="label">Comece a Sua</span><span class="dot"></span></div>
+</div>
+
+<!-- ================= CAP 1 — O SONHO ================= -->
+<section class="chapter" id="cap1">
+  <div class="hero-bg" style="background-image:url('assets/img/prologue.jpg');background-position:center 22%;"></div>
+  <div class="hero-content">
+    <h1 id="hero-title">Porque o seu grande dia merece ser vivido com leveza, beleza e perfeição.</h1>
+    <div class="cta-row">
+      <a href="https://api.whatsapp.com/send?phone=5531996472045" class="btn-primary">Falar com a Elass</a>
+      <a href="historias.html" class="link-underline">Conhecer nossas histórias</a>
+    </div>
+  </div>
+  <div class="scroll-cue"><span class="line"></span> Role para continuar</div>
 </section>
-<div class="promise-strip"><span>Planejamento com propósito</span><span>Presença em cada etapa</span><span>Cuidado que se sente</span></div>
-<section class="section public-services"><div class="section-inner"><div class="editorial-heading"><div><span class="eyebrow">Para cada momento, um cuidado</span><h2>A assessoria certa<br>para a história de vocês.</h2></div><p>Seja qual for o ponto de partida, caminhamos ao lado de vocês para transformar decisões em tranquilidade.</p></div><div class="service-cards" data-content="services"><article><span class="service-number">01</span><h3>Assessoria Completa</h3><p>Planejamento desde o início: prioridades, fornecedores, cronograma e acompanhamento até a realização.</p><a href="/servicos" class="text-link">Conhecer o serviço ↗</a></article><article><span class="service-number">02</span><h3>Assessoria Parcial</h3><p>Vocês já começaram. Entramos para organizar os próximos passos e cuidar dos detalhes que ainda faltam.</p><a href="/servicos" class="text-link">Conhecer o serviço ↗</a></article><article><span class="service-number">03</span><h3>Cerimonial do Dia</h3><p>Coordenação dos bastidores, dos profissionais e dos momentos para que vocês vivam a celebração.</p><a href="/servicos" class="text-link">Conhecer o serviço ↗</a></article></div></div></section>
-<section class="section team-section"><div class="section-inner team-layout"><div class="team-photo"><img src="assets/img/team.webp" width="1000" height="1333" loading="lazy" alt="Equipe Elass Cerimonial"><span>Organização e emoção, juntas.</span></div><div class="team-copy"><span class="eyebrow">Quem cuida do seu dia</span><h2 data-cms="about_title">O olhar atento.<br>O cuidado de perto.</h2><p data-cms="about_text">A Elass acredita que organização e emoção caminham juntas. Ouvimos a história de vocês, entendemos suas prioridades e cuidamos dos bastidores para que o essencial tenha espaço: viver cada momento.</p><a href="/sobre" class="text-link">Conheça a Elass ↗</a></div></div></section>
-<section class="section"><div class="section-inner"><div class="editorial-heading"><div><span class="eyebrow">Do primeiro sim ao último brinde</span><h2 data-cms="process_title">Um caminho mais leve,<br>um passo de cada vez.</h2></div><a href="/contato" class="text-link">Comece por uma conversa ↗</a></div><div class="process-grid"><article><span>01 / ESCUTAR</span><h3>A história de vocês</h3><p>Uma conversa para conhecer o sonho, o estilo e as prioridades do casal.</p></article><article><span>02 / PLANEJAR</span><h3>Cada escolha, com sentido</h3><p>Organizamos os passos, os fornecedores e o cronograma da celebração.</p></article><article><span>03 / ACOMPANHAR</span><h3>Presença e atenção</h3><p>Alinhamos os detalhes e acompanhamos o que precisa acontecer.</p></article><article><span>04 / REALIZAR</span><h3>O dia de vocês</h3><p>Cuidamos dos bastidores para vocês estarem presentes em cada momento.</p></article></div></div></section>
-<section class="section real-stories" hidden data-container="portfolio"><div class="section-inner"><span class="eyebrow">Histórias que ficam</span><h2>Celebrações com a Elass.</h2><div class="stories-grid" data-content="portfolio"></div></div></section>
-<section class="section" hidden data-container="testimonials"><div class="section-inner"><span class="eyebrow">Quem viveu conta</span><h2>Palavras que guardamos com carinho.</h2><div class="testimonial-grid" data-content="testimonials"></div></div></section>
-<section class="section faq-section"><div class="section-inner"><div class="editorial-heading"><div><span class="eyebrow">Antes de começar</span><h2>Para conversar com calma.</h2></div></div><div data-content="faqs"><details><summary>Como escolher a assessoria para o nosso casamento?</summary><p>Comecem contando o que já está definido e onde precisam de apoio. A equipe apresenta o serviço adequado ao planejamento de vocês.</p></details><details><summary>Já contratamos fornecedores. Ainda podemos ter assessoria?</summary><p>Sim. A assessoria parcial permite alinhar o que já foi contratado e organizar as etapas que ainda precisam de acompanhamento.</p></details><details><summary>Como acompanhamos o planejamento?</summary><p>Após a liberação do acesso pela equipe, vocês podem consultar informações compartilhadas, responder ao briefing e acompanhar o planejamento no portal dos noivos.</p></details></div></div></section>
-<section class="closing-section"><div class="section-inner"><span class="eyebrow">O seu próximo capítulo</span><h2 data-cms="contact_title">Tudo começa<br>com uma boa conversa.</h2><p>Contem o que imaginam. Vamos encontrar, juntos, o caminho até o grande dia.</p><a href="/contato" class="btn-primary">Quero conversar com a Elass ↗</a><a href="/portal" class="text-link">Já são nossos clientes? Acessem o portal</a></div></section>
-</main>
+
+<!-- ================= CAP 2 — A JORNADA ================= -->
+<section class="chapter" id="cap2">
+  <div class="chapter-inner">
+    <div class="head">
+      <span class="eyebrow">Capítulo Dois · A Jornada</span>
+      <h2>Um caminho pensado para que você só precise sentir.</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-dot"></div><div><h3>Primeiro Contato</h3><p>Antes de falar de logística, a gente ouve. Cada história começa com uma conversa de verdade sobre o que vocês imaginam viver no grande dia.</p></div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div><h3>Reunião de Alinhamento</h3><p>Ali a gente entende estilo, prioridades e orçamento, e começa a desenhar a atmosfera que combina com vocês dois.</p></div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div><h3>Planejamento</h3><p>Do roteiro ao cronograma minuto a minuto, cada detalhe ganha um propósito. Nada fica por conta do acaso.</p></div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div><h3>Curadoria de Fornecedores</h3><p>Escolhemos com carinho os parceiros certos para o seu estilo. Sempre pensando em vocês, nunca no genérico.</p></div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div><h3>Execução</h3><p>No dia, cuidamos de cada bastidor para que vocês só precisem estar presentes. E se emocionar.</p></div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div><h3>Pós-Evento</h3><p>A história não termina no altar. A gente também cuida do depois, para que a lembrança seja tão bonita quanto o dia em si.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CAP 3 — OS BASTIDORES ================= -->
+<section class="chapter" id="cap3">
+  <div class="chapter-inner">
+    <div class="split">
+      <div class="photo-wrap reveal">
+        <img src="assets/img/team.jpg" alt="Equipe Elass Cerimonial">
+      </div>
+      <div class="text reveal">
+        <span class="eyebrow">Capítulo Três · Os Bastidores</span>
+        <h2>Duas mulheres. Uma missão: transformar sonhos em realidade.</h2>
+        <p class="anchor">"Cuidamos de cada casamento como se fosse o nosso. É assim que a gente trabalha."</p>
+        <p>A Elass nasceu da certeza de que organização e emoção caminham juntas. A gente ama transformar sonhos em momentos que ninguém esquece, cuidando de cada detalhe com o mesmo carinho que dedicaríamos ao nosso próprio casamento.</p>
+        <p>Realizamos sonhos com organização, carinho e excelência. Essa é a promessa que levamos para cada história que ajudamos a escrever.</p>
+        <a href="sobre.html" class="link-underline">Conhecer nossa história completa</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CAP 4 — OS MOMENTOS / SERVIÇOS ================= -->
+<section id="cap4">
+  <div class="head">
+    <span class="eyebrow">Capítulo Quatro · Os Momentos</span>
+    <h2>Cada serviço é um capítulo exclusivo da sua história.</h2>
+  </div>
+
+  <div class="service-panel" style="background:#2a231e;">
+    <div class="bgtint" style="background:radial-gradient(circle at 80% 20%, var(--bronze), transparent 60%);"></div>
+    <span class="sv-num">01</span>
+    <div class="sv-content reveal">
+      <span class="eyebrow">Para quem sonha sem se preocupar com nada</span>
+      <h3>Assessoria Completa</h3>
+      <p>Do primeiro encontro ao último brinde, a gente planeja, cuida e realiza cada detalhe do seu grande dia, para que vocês vivam só a emoção.</p>
+      <p class="case">"Não precisei pensar em nada. Só precisei chorar de felicidade." — depoimento de noiva</p>
+    </div>
+  </div>
+
+  <div class="service-panel" style="background:#241f1b;">
+    <div class="bgtint" style="background:radial-gradient(circle at 20% 70%, var(--nude), transparent 60%);"></div>
+    <span class="sv-num">02</span>
+    <div class="sv-content reveal">
+      <span class="eyebrow">Para quem já começou, mas quer leveza no caminho</span>
+      <h3>Assessoria Parcial</h3>
+      <p>Vocês já deram os primeiros passos. A gente entra para cuidar dos detalhes finais e garantir que tudo aconteça com perfeição.</p>
+    </div>
+  </div>
+
+  <div class="service-panel" style="background:#2a231e;">
+    <div class="bgtint" style="background:radial-gradient(circle at 80% 30%, var(--bronze), transparent 60%);"></div>
+    <span class="sv-num">03</span>
+    <div class="sv-content reveal">
+      <span class="eyebrow">Para viver o dia sem olhar pro relógio</span>
+      <h3>Cerimonial do Dia</h3>
+      <p>No dia mais importante, cuidamos de cada bastidor, cronograma e imprevisto, para que vocês só precisem estar presentes.</p>
+    </div>
+  </div>
+
+  <div class="cap4-cta">
+    <a href="servicos.html" class="link-underline" style="color:var(--offwhite);border-color:rgba(251,246,242,.4);">Conhecer todos os serviços</a>
+  </div>
+</section>
+
+<!-- ================= CAP 5 — AS HISTÓRIAS ================= -->
+<section class="chapter" id="cap5">
+  <div class="chapter-inner">
+    <div class="head">
+      <span class="eyebrow">Capítulo Cinco · As Histórias</span>
+      <h2>Cada casamento que assinamos é um documentário de amor.</h2>
+    </div>
+    <div class="stories-grid">
+      <div class="story-card reveal">
+        <div style="position:absolute;inset:0;background:linear-gradient(160deg,#caa084,#8c5a3c);"></div>
+        <span class="tag">Exemplo ilustrativo</span>
+        <div class="sc-content">
+          <h4>Joyce & Pedro</h4>
+          <div class="meta">Contagem, MG · 180 convidados</div>
+          <div class="quote">"Vivemos o dia exatamente como sonhávamos."</div>
+        </div>
+      </div>
+      <div class="story-card reveal">
+        <div style="position:absolute;inset:0;background:linear-gradient(160deg,#e3c1b4,#b47b57);"></div>
+        <span class="tag">Exemplo ilustrativo</span>
+        <div class="sc-content">
+          <h4>Camila & Rafael</h4>
+          <div class="meta">Belo Horizonte, MG · 220 convidados</div>
+          <div class="quote">"Foi como assistir ao nosso próprio filme."</div>
+        </div>
+      </div>
+      <div class="story-card reveal">
+        <div style="position:absolute;inset:0;background:linear-gradient(160deg,#8a8e6c,#4a3b34);"></div>
+        <span class="tag">Exemplo ilustrativo</span>
+        <div class="sc-content">
+          <h4>Ana & Guilherme</h4>
+          <div class="meta">Betim, MG · 100 convidados</div>
+          <div class="quote">"Cuidaram de cada detalhe como se fosse delas."</div>
+        </div>
+      </div>
+    </div>
+    <div class="stories-cta"><a href="historias.html" class="link-underline">Ver todas as histórias</a></div>
+  </div>
+</section>
+
+<!-- ================= CAP 6 — COMECE A SUA ================= -->
+<section class="chapter" id="cap6">
+  <div class="chapter-inner">
+    <span class="eyebrow">Capítulo Seis</span>
+    <h2>Vamos começar a escrever o seu maior sonho?</h2>
+    <a href="https://api.whatsapp.com/send?phone=5531996472045" class="btn-primary">Falar com a Elass no WhatsApp</a>
+    <div class="whats-note">Respondemos com o mesmo carinho que dedicamos a cada cerimônia.</div>
+  </div>
+</section>
 
 <!-- ================= FOOTER ================= -->
 <footer>
-<div class="footer-access"><a href="/portal">Portal dos noivos</a><a href="/admin">Acesso da equipe</a><a href="/privacidade">Privacidade</a></div>
   <div class="footer-grid">
     <div class="foot-brand">
       <img src="assets/img/logo-bronze.png" alt="Elass Cerimonial" style="filter:brightness(0) invert(1) opacity(.9);">
@@ -104,7 +252,7 @@
       <h5>Contato</h5>
       <ul>
         <li><a href="https://api.whatsapp.com/send?phone=5531996472045">WhatsApp</a></li>
-        <li><a href="https://instagram.com/elasscerimonial" target="_blank" rel="noopener noreferrer">@elasscerimonial</a></li>
+        <li><a href="https://instagram.com/elasscerimonial" target="_blank">@elasscerimonial</a></li>
         <li><a href="contato.html">Fale conosco</a></li>
       </ul>
     </div>
@@ -122,12 +270,12 @@
 </footer>
 
 <!-- ================= WHATSAPP FLOAT ================= -->
-<a id="wa-float" href="https://api.whatsapp.com/send?phone=5531996472045" target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp">
+<a id="wa-float" href="https://api.whatsapp.com/send?phone=5531996472045" target="_blank" aria-label="Falar no WhatsApp">
   <div class="pulse"></div>
   <svg viewBox="0 0 24 24"><path d="M17.6 6.32A7.85 7.85 0 0 0 12.05 4C7.6 4 4 7.6 4 12.05c0 1.44.38 2.79 1.04 3.96L4 20l4.1-1.04a8 8 0 0 0 3.95 1.03h.01c4.45 0 8.05-3.6 8.05-8.05a7.85 7.85 0 0 0-2.51-5.62zM12.06 18.4h-.01a6.34 6.34 0 0 1-3.23-.89l-.23-.14-2.4.62.64-2.35-.15-.24a6.34 6.34 0 0 1-.98-3.37c0-3.5 2.85-6.36 6.37-6.36a6.32 6.32 0 0 1 6.35 6.37c0 3.5-2.86 6.36-6.36 6.36zm3.49-4.77c-.19-.1-1.13-.56-1.31-.62-.17-.06-.3-.1-.43.1-.13.19-.5.62-.61.75-.11.13-.23.14-.42.05-.19-.1-.8-.3-1.53-.95a5.7 5.7 0 0 1-1.05-1.31c-.11-.19-.01-.29.09-.4.1-.1.19-.23.28-.35.09-.11.12-.19.19-.32.06-.13.03-.24-.02-.34-.06-.1-.5-1.2-.68-1.64-.18-.42-.36-.36-.5-.37h-.42c-.14 0-.37.05-.56.26-.19.21-.75.73-.75 1.77s.77 2.06.88 2.2c.11.15 1.5 2.28 3.63 3.11 2.13.82 2.13.55 2.52.51.38-.03 1.24-.5 1.42-.99.18-.48.18-.9.13-.99-.05-.09-.18-.14-.37-.24z"/></svg>
 </a>
 
 <script src="assets/js/main.js"></script>
-
+<script src="assets/js/home.js"></script>
 </body>
 </html>
