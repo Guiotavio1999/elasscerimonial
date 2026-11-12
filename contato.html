@@ -10,12 +10,12 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <meta name="theme-color" content="#4A3B34">
-<link rel="canonical" href="https://elas-cerimonial-site.vercel.app/contato.html">
+<link rel="canonical" href="https://elasscerimonial.vercel.app/contato.html">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://elas-cerimonial-site.vercel.app/contato.html">
+<meta property="og:url" content="https://elasscerimonial.vercel.app/contato.html">
 <meta property="og:title" content="Contato | Elass Cerimonial">
 <meta property="og:description" content="Vamos começar a escrever o seu maior sonho?">
-<meta property="og:image" content="https://elas-cerimonial-site.vercel.app/assets/img/og-image.jpg">
+<meta property="og:image" content="https://elasscerimonial.vercel.app/assets/img/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="pt_BR">
@@ -23,7 +23,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Contato | Elass Cerimonial">
 <meta name="twitter:description" content="Vamos começar a escrever o seu maior sonho?">
-<meta name="twitter:image" content="https://elas-cerimonial-site.vercel.app/assets/img/og-image.jpg">
+<meta name="twitter:image" content="https://elasscerimonial.vercel.app/assets/img/og-image.jpg">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -68,7 +68,7 @@
   <div class="bg" style="background-image:url('assets/img/prologue.jpg');background-image:image-set(url('assets/img/prologue.webp') type('image/webp'), url('assets/img/prologue.jpg') type('image/jpeg'));"></div>
   <div class="inner">
     <div class="breadcrumb">Elass Cerimonial · Contato</div>
-    <h1>Vamos começar a escrever o seu maior sonho?</h1>
+    <h1 data-cms="contact_title">Vamos começar a escrever o seu maior sonho?</h1>
     <p class="lead">Conta pra gente um pouco sobre o casal e a data do sonho. Respondemos com o mesmo carinho que dedicamos a cada cerimônia.</p>
   </div>
 </section>
@@ -89,13 +89,17 @@
         </div>
         <div class="form-row">
           <label for="data">Data prevista do casamento</label>
-          <input type="text" id="data" name="data" placeholder="Ainda não sei / dd/mm/aaaa">
+          <input type="date" id="data" name="data">
         </div>
         <div class="form-row">
           <label for="mensagem">Conte um pouco sobre o sonho de vocês</label>
           <textarea id="mensagem" name="mensagem" placeholder="Estilo do casamento, número de convidados, local..."></textarea>
         </div>
-        <button type="submit" class="btn-primary" style="border:none;cursor:pointer;">Enviar pelo WhatsApp</button>
+        <div class="form-row"><label for="email">E-mail (opcional)</label><input type="email" id="email" name="email" autocomplete="email"></div>
+        <label class="contact-consent"><input type="checkbox" name="consent" required> Autorizo o uso dos meus dados para atendimento pela Elass. <a href="/privacidade">Privacidade</a></label>
+        <div class="contact-hp" aria-hidden="true"><input name="website" tabindex="-1" autocomplete="off" aria-label="Deixe vazio"></div>
+        <p id="contact-status" role="status" aria-live="polite"></p>
+        <button type="submit" class="btn-primary" style="border:none;cursor:pointer;">Enviar solicitação</button>
       </form>
     </div>
     <div>
@@ -112,6 +116,7 @@
 </section>
 
 <footer>
+<div class="footer-access"><a href="/portal">Portal dos noivos</a> · <a href="/admin">Acesso da equipe</a> · <a href="/privacidade">Privacidade</a></div>
   <div class="footer-grid">
     <div class="foot-brand">
       <img loading="lazy" src="assets/img/logo-bronze.png" alt="Elass Cerimonial" style="filter:brightness(0) invert(1) opacity(.9);" width="500" height="500" decoding="async">
