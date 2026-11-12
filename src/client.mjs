@@ -10,7 +10,7 @@ let auth;
 export async function getAuth(){if(!auth){const c=await fetch('/api/app?action=config').then(r=>r.json());if(!c.authUrl)throw Error('Não foi possível iniciar o acesso.');auth=createAuthClient(c.authUrl);}return auth;}
 export async function api(action,{method='GET',body,params={},publicCall=false}={}){
  const query=new URLSearchParams({action,...Object.fromEntries(Object.entries(params).filter(([,v])=>v!==undefined&&v!==null&&v!==''))});const headers={'Content-Type':'application/json'};
- if(!publicCall){const a=await getAuth();const t=await a.token();if(t.error||!t.data?.token)throw Error('Entre na sua conta para continuar.');headers.Authorization='Bearer '+t.data.token;}
+ if(!publicCall){const a=await getAuth();let t;try{t=await a.token();}catch{throw Error('Entre na sua conta para continuar.');}if(t.error||!t.data?.token)throw Error('Entre na sua conta para continuar.');headers.Authorization='Bearer '+t.data.token;}
  const response=await fetch('/api/app?'+query,{method,headers,body:body?JSON.stringify(body):undefined});const result=await response.json();if(!response.ok)throw Error(result.error||'Não foi possível concluir.');return result;
 }
 export async function all(kind,event){let rows=[],offset=0,more=true;while(more){const r=await api('records',{params:{kind,event,limit:200,offset}});rows.push(...r.rows);more=r.more;offset+=200;if(offset>=10000)break;}return rows;}
